@@ -16,3 +16,10 @@ nc localhost 80
 GET /anything HTTP/1.0
 POST /anything HTTP/1.0
 ```
+
+### Warning
+
+The executable needs root permissions because it is listening for incoming connections everywhere (0.0.0.0).
+Therefore, if your server is running on the default address, anyone on the network can access and/or create any file on your machine.
+ 
+Change the `sockaddr_in` struct in the data section to override this.
